@@ -4,7 +4,7 @@ import Button from './Button'
 export default class Clock extends React.Component {
     state = {
         date: new Date(),
-        local: 'en-US',
+        local: 'bn-BD',
     }
 
     componentDidMount() {
@@ -15,9 +15,9 @@ export default class Clock extends React.Component {
         }, 1000);
     }
 
-    hendalClick = () => {
+    hendalClick = (local) => {
         this.setState({
-            local: 'bn-BD',
+            local,
         })
     }
 
@@ -25,10 +25,17 @@ export default class Clock extends React.Component {
         // console.log('clock component ')
         const {date, local} = this.state;
 
+        let button;
+        if(local === 'bn-BD'){
+           button = <Button change={this.hendalClick} local='en-US'></Button>
+        }else{
+            button = <Button change={this.hendalClick} local = 'bn-BD'></Button>
+        }
+
         return(
             <div> 
                 <h1> This is a Time  {date.toLocaleTimeString(local)} </h1>
-                <Button change={this.hendalClick}></Button>
+                {button}
             </div>
         )
     }
