@@ -1,10 +1,12 @@
 import './App.css';
-import Clock from './component/Clock'
+// import Clock from './component/Clock'
+import From from './component/From.jsx'
 
 function App() {
   return (
     <div className="App">
-      <Clock></Clock>
+      {/* <Clock></Clock> */}
+      <From> </From>
     </div>
   );
 }
