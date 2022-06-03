@@ -8,7 +8,6 @@ class From extends React.Component {
         email : '',
         country : 'bangladesh',
         permaission : false,
-
     }
 
     onchageHandaler = (event) => {
@@ -33,8 +32,6 @@ class From extends React.Component {
                 email : event.target.value
             })
         }
-
- 
     }
 
     submitHendaler = (event) => {
