@@ -15,7 +15,7 @@ class Counter extends React.Component{
 
     handelClick ( ) {
         this.setState((state, props)=> {
-            counter: state.counter + counter;
+            counter: this.state.counter + this.state.counter;
         })
     }
 
