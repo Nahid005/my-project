@@ -1,30 +1,12 @@
 import React from 'react';
 
-class Button extends React.Component {
+function Button (props) {
+    
+    const {handelClick,} = props;
 
-    // shouldComponentUpdate(nextprops) {
-    //     const {change:carrentProps} = this.props;
-    //     const {change: nextProps} = nextprops;
-
-    //     if(carrentProps === nextProps){
-    //         return false;
-    //     }else{
-    //         return true
-    //     }
-    // }
-
-
-    render() {
-        let {change, local} = this.props;
-
-        // console.log('button component ')
-        
-        return(
-            <div>
-                <button type='button' onClick={() => change(local)} > click here </button>
-            </div>
-        )
-    }
+    return (
+        <button onClick={handelClick} > Click Me...</button>
+    )
 }
 
 export default Button;
