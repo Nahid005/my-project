@@ -1,40 +1,44 @@
-import React from 'react';
+import React from "react";
 import Button from './Button'
 
-export default class Clock extends React.Component {
+export default class Clock extends React.Component{
     state = {
         date: new Date(),
-        local: 'bn-BD',
+        local : ''
     }
 
-    componentDidMount() {
-        setInterval(() => {
-            this.setState({
-                date: new Date()
-            })
-        }, 1000);
-    }
-
-    hendalClick = (local) => {
+    clickButton = (local) => {
         this.setState({
-            local,
+            date: new Date(),
+            local
         })
     }
 
+    
+
     render() {
-        // console.log('clock component ')
+
         const {date, local} = this.state;
 
         let button;
-        if(local === 'bn-BD'){
-           button = <Button change={this.hendalClick} local='en-US'></Button>
-        }else{
-            button = <Button change={this.hendalClick} local = 'bn-BD'></Button>
-        }
 
+        if(local==='bn-BD') {
+            button = (
+                <>
+                <h1> This is a Time {date.toLocaleTimeString(local)} </h1>
+            <Button handelClick = {this.clickButton} local='bn-BD' ></Button>
+                </>
+            )
+        }else if(local==='en-US'){
+            button =(
+                <>
+                    <h1> This is a Time {date.toLocaleTimeString(local)} </h1>
+                <Button handelClick = {this.clickButton} local= 'en-US' ></Button>
+                </>
+            )
+        }
         return(
-            <div> 
-                <h1> This is a Time  {date.toLocaleTimeString(local)} </h1>
+            <div>
                 {button}
             </div>
         )
