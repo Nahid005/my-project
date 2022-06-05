@@ -1,11 +1,11 @@
 import React from 'react';
 
 function Button (props) {
-    
-    const {handelClick,} = props;
+
+    const {handelClick, local} = props
 
     return (
-        <button onClick={handelClick} > Click Me...</button>
+        <button type='button' onClick={()=> handelClick(local)}> Click Me...</button>
     )
 }
 
